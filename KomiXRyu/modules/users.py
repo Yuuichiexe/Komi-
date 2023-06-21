@@ -98,13 +98,7 @@ def log_user(update, _):
     
 
 
-def chat_checker(update: Update, context: CallbackContext):
-    bot = context.bot
-    try:
-        if update.effective_message.chat.get_member(bot.id).can_send_messages is False:
-            bot.leaveChat(update.effective_message.chat.id)
-    except Unauthorized:
-        pass
+
 
 
 def __user_info__(user_id):
