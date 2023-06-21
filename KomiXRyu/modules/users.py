@@ -93,31 +93,9 @@ def log_user(update, _):
 
 @sudo_plus
 
-    all_chats = sql.get_all_chats() or []
-    chatfile = "List of chats.\n0. Chat name | Chat ID | Members count\n"
-    P = 1
-    for chat in all_chats:
-        try:
-            curr_chat = context.bot.getChat(chat.chat_id)
-            bot_member = curr_chat.get_member(context.bot.id)
-            chat_members = curr_chat.get_member_count(context.bot.id)
-            chatfile += "{}. {} | {} | {}\n".format(
-                P,
-                chat.chat_name,
-                chat.chat_id,
-                chat_members,
-            )
-            P = P + 1
-        except:
-            pass
+    
 
-    with BytesIO(str.encode(chatfile)) as output:
-        output.name = "groups_list.txt"
-        update.effective_message.reply_document(
-            document=output,
-            filename="groups_list.txt",
-            caption="Here be the list of groups in my database.",
-        )
+    
 
 
 def chat_checker(update: Update, context: CallbackContext):
