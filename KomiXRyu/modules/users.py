@@ -9,6 +9,7 @@ from telegram.ext import MessageHandler, Filters, CommandHandler
 import KomiXRyu.modules.sql.users_sql as sql
 from KomiXRyu import dispatcher, LOGGER, DEV_USERS
 from KomiXRyu.modules.helper_funcs.filters import CustomFilters
+from MikuXProBot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
 
 USERS_GROUP = 4
 CHAT_GROUP = 10
