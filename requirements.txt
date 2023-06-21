@@ -23,7 +23,7 @@ redis
 requests
 spamwatch
 speedtest-cli>=2.0.2
-sqlalchemy
+sqlalchemy==1.3.23
 telethon==1.16.4
 telegraph
 ujson
