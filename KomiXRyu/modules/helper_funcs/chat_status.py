@@ -237,18 +237,29 @@ def dev_plus(func):
 
     return is_dev_plus_func
 
-def sudo_plus(func):
+    def sudo_plus(func):
     @wraps(func)
-    def is_drag_plus_func(update, context, *args, **kwargs):
+    def is_sudo_plus_func(update: Update, context: CallbackContext, *args, **kwargs):
+        bot = context.bot
         user = update.effective_user
+        chat = update.effective_chat
 
-        if user.id in SUPPORT_USERS or DEV_USERS:
+        if user and is_sudo_plus(chat, user.id):
             return func(update, context, *args, **kwargs)
         if not user:
             pass
+        elif DEL_CMDS and " " not in update.effective_message.text:
+            try:
+                update.effective_message.delete()
+            except:
+                pass
+        else:
+            update.effective_message.reply_text(
+                "Who dis non-admin telling me what to do? You want a punch?",
+            )
 
+    return is_sudo_plus_func
 
-    return is_drag_plus_func
 
 def ass_plus(func):
     @wraps(func)
