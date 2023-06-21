@@ -92,7 +92,7 @@ def log_user(update, _):
 
 
 @sudo_plus
-def chats(update: context: CallbackContext):
+
     all_chats = sql.get_all_chats() or []
     chatfile = "List of chats.\n0. Chat name | Chat ID | Members count\n"
     P = 1
