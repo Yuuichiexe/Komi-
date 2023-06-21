@@ -101,21 +101,6 @@ def log_user(update, _):
 
 
 
-def __user_info__(user_id):
-    if user_id in [777000, 5327104856]:
-        return """╘═━「 Groups count: <code>???</code> 」"""
-    if user_id == dispatcher.bot.id:
-        return """╘═━「 Groups count: <code>???</code> 」"""
-    num_chats = sql.get_user_num_chats(user_id)
-    return f"""╘═━「 Groups count: <code>{num_chats}</code> 」"""
-
-
-def __stats__():
-    return f"× {sql.num_users()} users, across {sql.num_chats()} chats"
-
-
-def __migrate__(old_chat_id, new_chat_id):
-    sql.migrate_chat(old_chat_id, new_chat_id)
 
 
 __help__ = ""  # no help string
