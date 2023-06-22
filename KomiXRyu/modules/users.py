@@ -103,7 +103,6 @@ def log_user(update, _):
 
 
 
-__help__ = """  # no help string
 
 BROADCAST_HANDLER = CommandHandler(
     ["broadcastall", "broadcastusers", "broadcastgroups"],
