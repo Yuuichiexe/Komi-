@@ -447,8 +447,8 @@ def stats(update, context):
     status += "*♡ python-Telegram-Bot:* " + str(ptbver) + "\n"
     status += "*♡ Uptime:* " + str(botuptime) + "\n"
     try:
-        update.effective_message.reply_photo(
-            KOMI_IMG
+        
+            
             status
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
