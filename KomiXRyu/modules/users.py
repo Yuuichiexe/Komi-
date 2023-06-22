@@ -89,18 +89,3 @@ def log_user(update, _):
 
     if msg.forward_from:
         sql.update_user(msg.forward_from.id, msg.forward_from.username)
-
-
-@sudo_plus
-
-    
-
-    
-
-
-
-
-
-
-
-
